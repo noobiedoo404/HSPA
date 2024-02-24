@@ -1,12 +1,20 @@
-<div class="row">
-    <div class="shadow-lg col-sm-4">
-        <div class="card">
-            <img class = "propImg" src="assets\images\house_default.png">
-            <div class="card-body p-2">
-                <p>{{Property.name}}</p>
-                <p>{{Property.location}}</p>
-                <p>{{Property.price}}</p>
-            </div>
-        </div>
+<div class="card">
+    <div class="card-img-wrapper">
+        <img class="card-img-top" src="assets\images\house_default.png">
+        <ul class="list-inline text-center member-icons animate">
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>
+            </li>
+            <li class="list-inline-item">
+                <button class="btn btn-primary"><i class="far fa-address-book"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body p-2">
+        <p>{{property.name}}</p>
+        <p>{{property.location}}</p>
+        <p>{{property.price}}</p>
     </div>
 </div>
+
+<!-- property list is the parent so we need to pass data from parent to the child which is property card here ( the child)  -->
