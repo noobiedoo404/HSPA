@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IProperty } from 'src/app/IProperty';
 import { HousingService } from 'src/app/services/housing.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { HousingService } from 'src/app/services/housing.service';
   styleUrls: ['./property-list.component.css']
 })
 export class PropertyListComponent implements OnInit {
-  properties: any;
+  properties: Array<IProperty>=[];
   constructor(private housingService: HousingService) {
   }
   ngOnInit(): void {
