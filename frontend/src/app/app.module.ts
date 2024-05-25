@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { AlertifyService } from './services/alertify.service';
+import { AuthService } from './services/auth.service';
 
 const appRoutes : Routes =[
   {path: '', component : PropertyListComponent},
@@ -44,7 +45,11 @@ const appRoutes : Routes =[
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HousingService, AlertifyService],
+  providers: [  
+    HousingService,
+    AlertifyService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
