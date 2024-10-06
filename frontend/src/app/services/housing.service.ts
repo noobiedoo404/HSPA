@@ -9,20 +9,24 @@ import { IProperty} from '../IProperty';
 export class HousingService {
 
 constructor(private http: HttpClient) { }
-getProperties(): Observable<IProperty[]>{
-  return this.http.get('data/properties.json').pipe(
-    map(
-      (data:any) =>{
-        const propertiesArray : Array<IProperty> = [];
-        for(  const id in data){
-          if(data.hasOwnProperty(id)){
-              propertiesArray.push(data[id]);
-          }
-        }
-        return propertiesArray;
-      }
-    )
-    
-  )
-}
+  // getProperties(): Observable<IProperty[]> {
+  //   return this.http.get('data/properties.json').pipe(
+  //     map(
+  //       (data: any) => {
+  //         const propertiesArray: Array<IProperty> = [];
+  //         for (const id in data) {
+  //           if (data.hasOwnProperty(id)) {
+  //             propertiesArray.push(data[id]);
+  //           }
+  //         }
+  //         return propertiesArray;
+  //       }
+  //     )
+
+  //   )
+  // }
+
+  getProperties(): Observable<string[]>{
+    return this.http.get<string[]>('https://localhost:44350/api/city');
+  }
 }
